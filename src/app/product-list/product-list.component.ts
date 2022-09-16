@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
     "price": 450,
     "stock": 10,
     "image" : "assets/images/surtidoVariedad.jpg",
-    "clearance": true,
+    "clearance": false,
   },
   {
     "name": "Diversion",
@@ -62,7 +62,7 @@ export class ProductListComponent implements OnInit {
     "price": 250,
     "stock": 70,
     "image" : "assets/images/galletitasLincoln.webp",
-    "clearance": true,
+    "clearance": false,
   },
   {
     "name": "Cerealitas x3",
