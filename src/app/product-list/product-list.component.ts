@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
     "stock": 5,
     "image" : "assets/images/surtidoBagley.webp",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Variedad",
@@ -23,6 +24,7 @@ export class ProductListComponent implements OnInit {
     "stock": 10,
     "image" : "assets/images/surtidoVariedad.jpg",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Diversion",
@@ -31,6 +33,7 @@ export class ProductListComponent implements OnInit {
     "stock": 7,
     "image" : "assets/images/surtidoDiversion.webp",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Variedad Doradas",
@@ -39,6 +42,7 @@ export class ProductListComponent implements OnInit {
     "stock": 15,
     "image" : "assets/images/surtidoVariedadDorada.jpg",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Boca De Dama",
@@ -47,6 +51,7 @@ export class ProductListComponent implements OnInit {
     "stock": 20,
     "image" : "assets/images/bocaDeDama.jpg",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Variedad Chocolate",
@@ -55,6 +60,7 @@ export class ProductListComponent implements OnInit {
     "stock": 0,
     "image" : "assets/images/surtidoVariedadChocolate.jpg",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Lincoln",
@@ -63,6 +69,7 @@ export class ProductListComponent implements OnInit {
     "stock": 70,
     "image" : "assets/images/galletitasLincoln.webp",
     "clearance": false,
+    "quantity": 0,
   },
   {
     "name": "Cerealitas x3",
@@ -71,11 +78,20 @@ export class ProductListComponent implements OnInit {
     "stock": 30,
     "image" : "assets/images/galletitasCerealitas.jpg",
     "clearance": false,
+    "quantity": 0,
   },
 ];
   constructor() { }
 
   ngOnInit(): void {
   }
+  upQuantity(galletita: product):void{
+    if(galletita.quantity < galletita.stock)
+    galletita.quantity++;
+  }
 
+  downQuantity(galletita: product):void{
+    if(galletita.quantity>0)
+    galletita.quantity--;
+  }
 }
