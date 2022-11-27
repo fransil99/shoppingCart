@@ -1,0 +1,7 @@
+<h3>Carrito:</h3>
+
+<ul>
+    <li *ngFor="let galletita of cartList$ | async" >
+        {{galletita.name}}: {{galletita.quantity}}
+    </li>
+</ul>

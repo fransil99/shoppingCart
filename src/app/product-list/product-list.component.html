@@ -14,16 +14,14 @@
                             <h5 class="fw-bolder">{{galletita.name}}</h5>
                             <!-- Product price-->
                             <span>$</span>{{galletita.price}}
-                            <p>Stock: <span *ngIf="galletita.stock==0">Sin Stock</span><span
+                            <p>Stock: <span *ngIf="galletita.stock==0" class="sinStock">Sin Stock</span><span
                                     *ngIf="galletita.stock !=0">{{galletita.stock}}</span> </p>
                         </div>
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <!-- Cantidad de productos-->
-                        <input type="number" [(ngModel)]="galletita.quantity">
-                        <div><button class="btn btn-outline-danger" (click)="downQuantity(galletita)">-</button>{{galletita.quantity}} <button class="btn btn-outline-success" (click)="upQuantity(galletita)">+</button></div>
-                        <div class="text-center"><button class="btn btn-outline-info">Agregar al Carrito</button></div>
+                        <app-input-integer [(quantity)]="galletita.quantity" [max]="galletita.stock" (maxReached)="maxReached($event)"></app-input-integer>
+                        <div class="text-center"><button class="btn btn-outline-info" (click)="addToCart(galletita)">Agregar al Carrito</button></div>
                     </div>
                 </div>
             </div>
